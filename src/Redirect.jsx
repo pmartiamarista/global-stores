@@ -8,9 +8,7 @@ const Counters = () =>
   ));
 
 const Sliders = () =>
-  [...Array(3)].map((element, index) => (
-    <Slider {...{ key: index, multiplier: index + 1 }} />
-  ));
+  [...Array(3)].map((element, index) => <Slider {...{ key: index }} />);
 
 export default function Redirect() {
   return (

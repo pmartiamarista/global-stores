@@ -2,7 +2,7 @@ import { useGlobalHook } from "@devhammed/use-global-hook";
 import { useEffect } from "react";
 import { SLIDER_STORE } from "../context/slider/slider-store";
 
-const Slider = ({ multiplier = 1 }) => {
+const Slider = () => {
   const [{ count }, dispatch, { changeValue }] = useGlobalHook(SLIDER_STORE);
 
   useEffect(() => {

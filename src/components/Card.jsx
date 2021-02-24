@@ -17,9 +17,7 @@ const Card = ({ header = "", children = [] }) => {
         <p className="card-header-title">{header}</p>
       </header>
       <div className="card-content">
-        <div className="columns is-desktop">
-          <Children />
-        </div>
+        <div className="columns is-desktop">{Children()}</div>
       </div>
       <div className="content"></div>
     </div>
