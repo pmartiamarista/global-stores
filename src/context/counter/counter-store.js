@@ -1,5 +1,5 @@
 import { useMemo, useReducer } from "react";
-import { createGlobalHook } from "../../hooks/useGlobalHook";
+import { createGlobalHook } from "@devhammed/use-global-hook";
 import { initialState, reducer } from "./counter-reducer";
 import actions from "./counter-actions";
 

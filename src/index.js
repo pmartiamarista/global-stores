@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { GlobalHooksProvider } from "./hooks/useGlobalHook";
+import { GlobalHooksProvider } from "@devhammed/use-global-hook";
 import stores from "./context/_index";
 
 ReactDOM.render(

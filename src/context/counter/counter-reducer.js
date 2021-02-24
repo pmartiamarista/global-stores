@@ -2,8 +2,8 @@ export const initialState = {
   count: 0,
 };
 
-export const reducer = (state, action) => {
-  switch (action.type) {
+export const reducer = (state, { type }) => {
+  switch (type) {
     case "reset":
       return { ...initialState };
     case "decrement":
@@ -17,8 +17,8 @@ export const reducer = (state, action) => {
         count: state.count + 1,
       };
     default: {
-      console.log(`Unhandled action type: ${action.type}`);
-      return { ...state };
+      console.log(`Unhandled action type: ${type}`);
+      return state;
     }
   }
 };
