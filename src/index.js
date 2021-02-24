@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "bulma";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { GlobalHooksProvider } from "@devhammed/use-global-hook";
