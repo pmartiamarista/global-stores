@@ -15,19 +15,30 @@ const Slider = () => {
   return (
     <div className="box">
       <div className="column px-1 pb-0" style={{ textAlign: "center" }}>
-        <input
-          className="slider has-output is-fullwidth"
-          id="sliderWithValue"
-          step="1"
-          min="0"
-          max="100"
-          value={count}
-          type="range"
-          onChange={({ nativeEvent }) =>
-            changeValue(dispatch, nativeEvent.target.value)
-          }
-        />
-        <output htmlFor="sliderWithValue">{count}</output>
+        <div
+          className="column is-align-self-center"
+          style={{ textAlign: "center" }}
+        >
+          <h2 className="subtitle is-2">{count}</h2>
+        </div>
+        <div
+          className="column is-align-self-center"
+          style={{ textAlign: "center" }}
+        >
+          <input
+            style={{ width: "100%" }}
+            className="slider has-output is-fullwidth"
+            id="sliderWithValue"
+            step="1"
+            min="0"
+            max="100"
+            value={count}
+            type="range"
+            onChange={({ nativeEvent }) =>
+              changeValue(dispatch, nativeEvent.target.value)
+            }
+          />
+        </div>
       </div>
     </div>
   );
