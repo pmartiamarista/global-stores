@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { SLIDER_STORE } from "../context/slider/slider-store";
 
 const Slider = () => {
-  const [{ count }, dispatch, { changeValue }] = useGlobalHook(SLIDER_STORE);
+  const [{ count }, dispatch, { changeValue, reset }] = useGlobalHook(SLIDER_STORE);
 
   useEffect(() => {
     console.log("Slider mounted");
@@ -11,6 +11,8 @@ const Slider = () => {
       console.log("Slider unmounted");
     };
   }, []);
+
+  const changeInputValue = ({ nativeEvent }) => changeValue(dispatch, nativeEvent.target.value);
 
   return (
     <div className="box">
@@ -34,9 +36,14 @@ const Slider = () => {
             max="100"
             value={count}
             type="range"
-            onChange={({ nativeEvent }) =>
-              changeValue(dispatch, nativeEvent.target.value)
-            }
+            onChange={changeInputValue}
+          />
+        </div>
+        <div className="column p-0" style={{ textAlign: "center" }}>
+          <button
+            className="button is-danger"
+            onClick={() => reset(dispatch)}
+            children="RESET"
           />
         </div>
       </div>
