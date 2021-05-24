@@ -1,18 +1,13 @@
 import { useGlobalHook } from "@devhammed/use-global-hook";
-import { useEffect } from "react";
+
 import { SLIDER_STORE } from "../context/slider/slider-store";
 
 const Slider = () => {
-  const [{ count }, dispatch, { changeValue, reset }] = useGlobalHook(SLIDER_STORE);
+  const [{ count }, dispatch, { changeValue, reset }] =
+    useGlobalHook(SLIDER_STORE);
 
-  useEffect(() => {
-    console.log("Slider mounted");
-    return () => {
-      console.log("Slider unmounted");
-    };
-  }, []);
-
-  const changeInputValue = ({ nativeEvent }) => changeValue(dispatch, nativeEvent.target.value);
+  const changeInputValue = ({ nativeEvent }) =>
+    changeValue(dispatch, nativeEvent.target.value);
 
   return (
     <div className="box">

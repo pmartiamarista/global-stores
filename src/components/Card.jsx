@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 const Card = ({ header = "", children = [] }) => {
-  const Children = () =>
+  const Content = () =>
     children.map((element, index) => (
       <div className="column" key={index}>
         {element}
@@ -17,7 +17,9 @@ const Card = ({ header = "", children = [] }) => {
         <p className="card-header-title">{header}</p>
       </header>
       <div className="card-content">
-        <div className="columns is-desktop">{Children()}</div>
+        <div className="columns is-desktop">
+          <Content />
+        </div>
       </div>
       <div className="content"></div>
     </div>
