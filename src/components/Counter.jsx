@@ -1,18 +1,10 @@
 import { useGlobalHook } from "@devhammed/use-global-hook";
-import { useEffect } from "react";
+
 import { COUNTER_STORE } from "../context/counter/counter-store";
 
 const Counter = ({ multiplier = 1 }) => {
-  const [{ count }, dispatch, { increment, decrement, reset }] = useGlobalHook(
-    COUNTER_STORE
-  );
-
-  useEffect(() => {
-    console.log("Counter mounted");
-    return () => {
-      console.log("Counter unmounted");
-    };
-  }, []);
+  const [{ count }, dispatch, { increment, decrement, reset }] =
+    useGlobalHook(COUNTER_STORE);
 
   return (
     <div className="box">
